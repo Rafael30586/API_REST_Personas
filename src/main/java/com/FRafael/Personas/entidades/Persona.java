@@ -28,7 +28,7 @@ public class Persona {
 	private LocalDate nacimiento;
 	
 	@Enumerated(EnumType.STRING)
-	private Genero genero;
+	private Genero1 genero1;
 	
 	@ManyToOne
 	private Pais pais_de_origen;
@@ -38,13 +38,13 @@ public class Persona {
 
 	
 
-	public Persona(Long documento, String nombres, String apellidos, LocalDate nacimiento, Genero genero,
+	public Persona(Long documento, String nombres, String apellidos, LocalDate nacimiento, Genero1 genero1,
 			Pais pais_de_origen) {
 		this.documento = documento;
 		this.nombres = nombres;
 		this.apellidos = apellidos;
 		this.nacimiento = nacimiento;
-		this.genero = genero;
+		this.genero1 = genero1;
 		this.pais_de_origen = pais_de_origen;
 	}
 
@@ -64,8 +64,8 @@ public class Persona {
 		return nacimiento;
 	}
 
-	public Genero getGenero() {
-		return genero;
+	public Genero1 getGenero() {
+		return genero1;
 	}
 
 	
@@ -86,8 +86,8 @@ public class Persona {
 		this.nacimiento = nacimiento;
 	}
 
-	public void setGenero(Genero genero) {
-		this.genero = genero;
+	public void setGenero(Genero1 genero1) {
+		this.genero1 = genero1;
 	}
 
 	public Pais getPais_de_origen() {
@@ -102,12 +102,7 @@ public class Persona {
 	@Override
 	public String toString() {
 		return "Persona [documento=" + documento + ", nombres=" + nombres + ", apellidos=" + apellidos + ", nacimiento="
-				+ nacimiento + ", genero=" + genero + ", pais_de_origen=" + pais_de_origen + "]";
+				+ nacimiento + ", genero=" + genero1 + ", pais_de_origen=" + pais_de_origen + "]";
 	}
 	
-}
-
-enum Genero{
-	MASCULINO,
-	FEMENINO
 }

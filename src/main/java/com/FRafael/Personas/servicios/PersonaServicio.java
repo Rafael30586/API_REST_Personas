@@ -21,5 +21,14 @@ public class PersonaServicio {
 	public List<Persona> mostrarPersonas(){
 		return personaRepositorio.findAll();
 	}
+	
+	public void borrarPersona(Long id) {
+		personaRepositorio.deleteById(id);
+	}
+	
+	public Persona obtenerPersonaId(Long id) {
+		Persona persona = personaRepositorio.getReferenceById(id);
+		return persona;
+	}
 
 }
