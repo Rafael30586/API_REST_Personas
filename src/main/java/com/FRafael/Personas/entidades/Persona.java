@@ -35,8 +35,6 @@ public class Persona {
 	public Persona() {
 	}
 
-	
-
 	public Persona(Long documento, String nombres, String apellidos, LocalDate nacimiento, Genero1 genero1,
 			Pais pais_de_origen) {
 		this.documento = documento;

@@ -26,7 +26,7 @@ public class PersonaServicio {
 		personaRepositorio.deleteById(dni);
 	}
 	
-	public Persona obtenerPersonaId(Long dni) {
+	public Persona obtenerPersona(Long dni) {
 		Persona persona = personaRepositorio.getReferenceById(dni);
 		return persona;
 	}
