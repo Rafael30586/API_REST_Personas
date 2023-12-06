@@ -37,7 +37,7 @@ public class PaisControlador {
 		paisServicio.borrarPais(id);
 	}
 	
-	@PutMapping
+	@PutMapping("/edicion")
 	public void modificarPais(@RequestParam Long id,@RequestParam String nombre) {
 		Pais pais = paisServicio.obtenerPaisId(id);
 		pais.setNombre(nombre);
