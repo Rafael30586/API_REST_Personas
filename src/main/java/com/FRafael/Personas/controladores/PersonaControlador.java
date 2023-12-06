@@ -38,25 +38,25 @@ public class PersonaControlador {
 		return personaServicio.mostrarPersonas();
 	}
 	
-	@DeleteMapping("/borrado-por-id")
+	@DeleteMapping("/borrado-por-dni")
 	public void borrarPersona(@RequestParam Long id) {
 		personaServicio.borrarPersona(id);
 	}
 	
-	@PutMapping //En lugar de un LacalDate, aceptar 3 int como parametro para mes, dia y año
-	public void modificarPersona(@RequestParam Long id,@RequestParam Long documento,
-			@RequestParam String nombres, @RequestParam String apellidos,@RequestParam LocalDate nacimiento,
-			@RequestParam Genero1 genero,@RequestParam Long paisId) {
+	@PutMapping(value = "/edicion",consumes = {"application/json","application/xml"})
+	public void editarPersona(@RequestParam Long dni,@RequestBody Persona persona) {
 		
-		Persona persona = personaServicio.obtenerPersonaId(id);
-		Pais pais = paisServicio.obtenerPaisId(paisId);
+		Persona p = personaServicio.obtenerPersonaId(dni);
 		
-		persona.setNombres(nombres);
-		persona.setApellidos(apellidos);
-		persona.setDocumento(documento);
-		persona.setGenero(genero);
-		persona.setNacimiento(nacimiento);
-		persona.setPais_de_origen(pais);
+		personaServicio.borrarPersona(dni);
+		
+		p.setDocumento(dni);
+		p.setNombres(persona.getNombres());
+		p.setApellidos(persona.getApellidos());
+		p.setGenero(persona.getGenero());
+		p.setNacimiento(persona.getNacimiento());
+		p.setPais_de_origen(persona.getPais_de_origen());
+		
+		personaServicio.guardarPersona(p);
 	}
-
 }

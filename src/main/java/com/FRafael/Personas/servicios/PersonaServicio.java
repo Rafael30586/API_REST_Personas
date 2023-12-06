@@ -22,12 +22,12 @@ public class PersonaServicio {
 		return personaRepositorio.findAll();
 	}
 	
-	public void borrarPersona(Long id) {
-		personaRepositorio.deleteById(id);
+	public void borrarPersona(Long dni) {
+		personaRepositorio.deleteById(dni);
 	}
 	
-	public Persona obtenerPersonaId(Long id) {
-		Persona persona = personaRepositorio.getReferenceById(id);
+	public Persona obtenerPersonaId(Long dni) {
+		Persona persona = personaRepositorio.getReferenceById(dni);
 		return persona;
 	}
 

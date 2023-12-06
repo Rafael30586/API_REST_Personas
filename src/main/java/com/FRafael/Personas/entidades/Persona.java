@@ -19,7 +19,6 @@ import jakarta.persistence.ManyToOne;
 public class Persona {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long documento;
 	private String nombres;
 	private String apellidos;
